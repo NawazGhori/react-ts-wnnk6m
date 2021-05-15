@@ -4,34 +4,28 @@ import { connect } from "react-redux";
 interface AppProps { }
 interface AppState {
   my_fun:any;
-  response:any;
+  res:any;
 }
 
-class App extends Component<AppProps, AppState> {
-  
+class App extends Component<AppProps, AppState> {  
   constructor(props) {
     super(props);
   }
   componentDidMount(){
     this.props.my_fun();
   }
-
   render() {
     return (
-      <div>
-        
-        <p>
-           {JSON.stringify(this.props.response)}
-        </p>
-      </div>
+      <React.Fragment>
+        <p>The response is: </p>
+        {JSON.stringify(this.props.res)}
+      </React.Fragment>      
     );
-  }
-
-  
+  }  
 }
 const receive = (state)=>{
   return{
-    response: state
+    res: state
   }
 }
 const send = (dispatch)=>{

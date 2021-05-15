@@ -16,7 +16,7 @@ const store = createStore(reducer,applyMiddleware(sagaMiddleware))
 sagaMiddleware.run(getData)
 
 ReactDOM.render(
-  <Provider>
+  <Provider store={store}>
   <App />
   </Provider>, 
 document.getElementById('root'));
